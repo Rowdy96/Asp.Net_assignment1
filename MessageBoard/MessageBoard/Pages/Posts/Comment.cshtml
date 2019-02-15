@@ -1,0 +1,19 @@
+﻿@page "{postId:int}"
+@model CommentModel
+@{
+}
+<div class="panel panel-default">
+    <div class="panel-heading">@Model.Post.Message</div>
+    <div class="panel-body">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Post.Comment"></label>
+                <textarea class="form-control" asp-for="Post.Comment"></textarea>
+            </div>
+            <button class="btn btn-success" type="submit">Add Comment</button>
+        </form>  
+    </div>
+    <div class="panel-footer">
+        <a class="btn btn-success" asp-page="./Post">All Posts</a>
+    </div>
+</div>

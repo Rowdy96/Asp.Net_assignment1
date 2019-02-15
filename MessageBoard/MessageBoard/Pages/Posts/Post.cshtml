@@ -1,0 +1,44 @@
+﻿
+@page
+@model PostModel
+@{
+}
+<h1>this is a post page</h1>
+<table class="table">
+    <tr>
+        <td>
+            Post
+        </td>
+        <td>
+            Comments
+        </td>
+        
+    </tr>
+    @foreach (var Post in Model.Posts)
+    {
+        <tr>
+            <td>
+                @Post.Message
+            </td>
+            @*<td>
+               @foreach(var comment in Post.Comment)
+               {
+                   <P>@comment</P>
+               }
+            </td>*@
+            <td>
+
+            </td>
+            <td>
+                <a asp-page="./Comment" class="glyphicon glyphicon-comment" asp-route-postID="@Post.Id">Comment</a>
+            </td>
+            <td>
+                <a asp-page="/Comment" class="glyphicon glyphicon-thumbs-up">Like</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<div>
+    <a class="btn btn-success" asp-page="./AddPost">Post a new Message</a>
+</div>

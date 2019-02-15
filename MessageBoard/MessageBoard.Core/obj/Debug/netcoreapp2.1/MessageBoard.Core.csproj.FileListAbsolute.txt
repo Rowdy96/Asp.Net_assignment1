@@ -1,0 +1,9 @@
+C:\Users\rahulmondal\Desktop\ASP.Net_Assignment\Assignment1\MessageBoard\MessageBoard.Core\bin\Debug\netcoreapp2.1\MessageBoard.Core.deps.json
+C:\Users\rahulmondal\Desktop\ASP.Net_Assignment\Assignment1\MessageBoard\MessageBoard.Core\bin\Debug\netcoreapp2.1\MessageBoard.Core.dll
+C:\Users\rahulmondal\Desktop\ASP.Net_Assignment\Assignment1\MessageBoard\MessageBoard.Core\bin\Debug\netcoreapp2.1\MessageBoard.Core.pdb
+C:\Users\rahulmondal\Desktop\ASP.Net_Assignment\Assignment1\MessageBoard\MessageBoard.Core\obj\Debug\netcoreapp2.1\MessageBoard.Core.csprojAssemblyReference.cache
+C:\Users\rahulmondal\Desktop\ASP.Net_Assignment\Assignment1\MessageBoard\MessageBoard.Core\obj\Debug\netcoreapp2.1\MessageBoard.Core.csproj.CoreCompileInputs.cache
+C:\Users\rahulmondal\Desktop\ASP.Net_Assignment\Assignment1\MessageBoard\MessageBoard.Core\obj\Debug\netcoreapp2.1\MessageBoard.Core.AssemblyInfoInputs.cache
+C:\Users\rahulmondal\Desktop\ASP.Net_Assignment\Assignment1\MessageBoard\MessageBoard.Core\obj\Debug\netcoreapp2.1\MessageBoard.Core.AssemblyInfo.cs
+C:\Users\rahulmondal\Desktop\ASP.Net_Assignment\Assignment1\MessageBoard\MessageBoard.Core\obj\Debug\netcoreapp2.1\MessageBoard.Core.dll
+C:\Users\rahulmondal\Desktop\ASP.Net_Assignment\Assignment1\MessageBoard\MessageBoard.Core\obj\Debug\netcoreapp2.1\MessageBoard.Core.pdb
