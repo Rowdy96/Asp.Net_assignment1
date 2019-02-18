@@ -1,17 +1,35 @@
 ﻿@page "{postId:int}"
-@model CommentModel
+@model MessageBoard.Pages.Posts.CommentModel
 @{
+    ViewData["Title"] = "Comment";
 }
 <div class="panel panel-default">
-    <div class="panel-heading">@Model.Post.Message</div>
+    <div class="panel-heading">
+        <label asp-for="Post.Message"></label>
+        <h3>@Model.Post.Message</h3>
+    </div>
+
+    <div class="panel-heading">
+        <label asp-for="Post.c">Comments</label>
+        <p>@Model.Post.c</p>
+    </div>
+    <div class="panel-heading">
+        <label asp-for="Post.Like"></label>
+        <p>@Model.Post.Like</p>
+    </div>
     <div class="panel-body">
         <form method="post">
             <div class="form-group">
-                <label asp-for="Post.Comment"></label>
-                <textarea class="form-control" asp-for="Post.Comment"></textarea>
+               
+                <label asp-for="@Model.Post.c">Comment</label>
+                <input asp-for="@Model.Post.c" class="form-control" />
             </div>
-            <button class="btn btn-success" type="submit">Add Comment</button>
-        </form>  
+            <button class="btn btn-success" type="submit" >Add Comment</button>
+           
+        </form>
+        <form method="post" asp-page-handler="Count" >
+            <button class="btn btn-primary glyphicon glyphicon-thumbs-up" type="submit"></button>
+        </form>
     </div>
     <div class="panel-footer">
         <a class="btn btn-success" asp-page="./Post">All Posts</a>

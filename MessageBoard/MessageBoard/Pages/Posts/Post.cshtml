@@ -3,42 +3,62 @@
 @model PostModel
 @{
 }
-<h1>this is a post page</h1>
-<table class="table">
-    <tr>
-        <td>
-            Post
-        </td>
-        <td>
-            Comments
-        </td>
-        
-    </tr>
-    @foreach (var Post in Model.Posts)
-    {
-        <tr>
-            <td>
-                @Post.Message
-            </td>
-            @*<td>
-               @foreach(var comment in Post.Comment)
-               {
-                   <P>@comment</P>
-               }
-            </td>*@
-            <td>
+<div class="panel">
+    <div class="panel-success">
+        <table class="table">
+            <thead class="">
+                <tr>
+                    <td>
+                        <h4>Post</h4>
+                    </td>
+                    <td>
+                        <h4>Comments</h4>
+                    </td>
+                    <td>
+                        <h4>Like</h4>
+                    </td>
+                    <td>
+                        
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+             
+            </thead>
+                <tbody>
+                    @foreach (var Post in @Model.Posts)
+                    {
+                        <tr>
+                            <td>
+                                @Post.Message
+                            </td>
+                            <td>
+                                <p>@Post.c</p>
+                                @*@foreach (var comment in @Post.Comment)
+                                {
+                                    <p>@comment</p>
+                                }*@
+                            </td>
 
-            </td>
-            <td>
-                <a asp-page="./Comment" class="glyphicon glyphicon-comment" asp-route-postID="@Post.Id">Comment</a>
-            </td>
-            <td>
-                <a asp-page="/Comment" class="glyphicon glyphicon-thumbs-up">Like</a>
-            </td>
-        </tr>
-    }
-</table>
+                            <td>
+                                <h5>@Post.Like</h5>
+                            </td>
+                            <td>
+                                <a asp-page="./Comment" class="glyphicon glyphicon-comment" asp-route-postID="@Post.Id">Comment</a>
+                            </td>
 
+                            <td>
+                                <form method="post">
+                                    <button class="btn btn-primary glyphicon glyphicon-thumbs-up" type="submit" asp-route-postID="@Post.Id" />
+                                </form>
+                            </td>
+
+                        </tr>
+                    }
+            </tbody>
+        </table>
+    </div>
+</div>
 <div>
     <a class="btn btn-success" asp-page="./AddPost">Post a new Message</a>
 </div>

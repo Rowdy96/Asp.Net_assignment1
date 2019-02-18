@@ -11,7 +11,9 @@ namespace MessageBoard.Pages.Posts
 {
     public class PostModel : PageModel
     {
-        private readonly IPostData postData;
+        [BindProperty]
+        public Post Post { get; set; }
+        public  IPostData postData;
         public IEnumerable<Post> Posts { get; set; }
         public PostModel(IPostData postData)
         {
@@ -21,6 +23,14 @@ namespace MessageBoard.Pages.Posts
         public void OnGet()
         {
             Posts = postData.GetAllPosts();
+        }
+        public IActionResult OnPost(int postId)
+        {
+            Post = postData.GetPostById(postId);
+            Post.Like = postData.CountLike(Post);
+            postData.commit();
+            return RedirectToPage("./Post", new { postId = Post.Id });
+
         }
     }
 }

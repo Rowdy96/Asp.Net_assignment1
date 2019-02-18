@@ -10,3 +10,5 @@ C:\Users\rahulmondal\Desktop\ASP.Net_Assignment\Assignment1\MessageBoard\Message
 C:\Users\rahulmondal\Desktop\ASP.Net_Assignment\Assignment1\MessageBoard\MessageBoard.Data\obj\Debug\netcoreapp2.1\MessageBoard.Data.csproj.CopyComplete
 C:\Users\rahulmondal\Desktop\ASP.Net_Assignment\Assignment1\MessageBoard\MessageBoard.Data\obj\Debug\netcoreapp2.1\MessageBoard.Data.dll
 C:\Users\rahulmondal\Desktop\ASP.Net_Assignment\Assignment1\MessageBoard\MessageBoard.Data\obj\Debug\netcoreapp2.1\MessageBoard.Data.pdb
+C:\Users\rahulmondal\Desktop\ASP.Net_Assignment\Assignment1\MessageBoard\MessageBoard.Data\bin\Debug\netcoreapp2.1\MessageBoard.Data.runtimeconfig.json
+C:\Users\rahulmondal\Desktop\ASP.Net_Assignment\Assignment1\MessageBoard\MessageBoard.Data\bin\Debug\netcoreapp2.1\MessageBoard.Data.runtimeconfig.dev.json

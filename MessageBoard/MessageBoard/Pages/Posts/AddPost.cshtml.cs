@@ -21,14 +21,14 @@ namespace MessageBoard.Pages.Posts
         }
         public IActionResult OnGet(int? postId)
         {
-            if (postId.HasValue) {
-                Post = postData.GetPostById(postId);
-            }
-            else
-            {
+            //if (postId.HasValue) {
+            //    Post = postData.GetPostById(postId);
+            //}
+            //else
+            //{
                 Post = new Post();
                 
-            }
+          //}
            
             if(Post == null)
             {
@@ -39,13 +39,13 @@ namespace MessageBoard.Pages.Posts
         }
         public IActionResult OnPost()
         {
-            if (ModelState.IsValid) {
+          if (ModelState.IsValid) {
 
                 postData.AddPost(Post);
                 postData.commit();
-                return RedirectToPage("./Comment", new { postId = Post.Id });
-            }
-            return Page();
+                return RedirectToPage("./Post", new { postId = Post.Id });
+          }
+           return Page();
         }
     }
 }

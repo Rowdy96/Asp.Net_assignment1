@@ -6,38 +6,53 @@ using MessageBoard.Core;
 using MessageBoard.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace MessageBoard.Pages.Posts
 {
     public class CommentModel : PageModel
     {
-        //public List<string> Comment;
+       
+       
+        [BindProperty]
+        public Post Post { get; set; }
+
+   
+        public IPostData postData { get; set; }
         public CommentModel(IPostData postData)
         {
             this.postData = postData;
         }
-        public Post Post { get; set; }
-        public IPostData postData { get; set; }
 
-        public IActionResult OnGet(int postId)
+        public IActionResult OnGet(int? postId)
         {
-            Post = postData.GetPostById(postId);
+            if(postId.HasValue)
+             
+            Post = postData.GetPostById(postId.Value);
+
             if (Post == null)
             {
-                return RedirectToPage("./NotFound");
+                return RedirectToPage("./Post");
             }
             return Page();
         }
         public IActionResult OnPost(int postId)
         {
-            if (ModelState.IsValid)
-            {
+           
+            var Postnew = postData.Addcomments(Post);
+            postData.commit();
+            return RedirectToPage("./Comment", new { postId = Postnew.Id });
 
-
-                
-                return RedirectToPage("./Comment", new { postId = Post.Id });
-            }
-            return Page();
         }
+
+        public IActionResult OnPostCount(int postId)
+        {
+            Post = postData.GetPostById(postId);
+            Post.Like = postData.CountLike(Post);
+            postData.commit();
+            return RedirectToPage("./Comment", new { postId = Post.Id });
+
+        }
+
     }
 }

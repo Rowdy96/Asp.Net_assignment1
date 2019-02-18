@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
+
 
 namespace MessageBoard.Core
 {
@@ -10,6 +12,7 @@ namespace MessageBoard.Core
         public int  Id { get; set; }
         [Required]
         public string Message { get; set; }
-        public List<string> Comment;
+        public string c { get; set; }
+        public int Like { get; set; }
     }
 }
