@@ -24,31 +24,17 @@ namespace MessageBoard.Pages.Posts
             this.postData = postData;
         }
 
-        public IActionResult OnGet(int? postId)
-        {
-            if(postId.HasValue)
-             
-            Post = postData.GetPostById(postId.Value);
-
-            if (Post == null)
-            {
-                return RedirectToPage("./Post");
-            }
-            return Page();
-        }
-        public IActionResult OnPost(int postId)
-        {
-           
-            var Postnew = postData.Addcomments(Post);
-            postData.commit();
-            return RedirectToPage("./Comment", new { postId = Postnew.Id });
-
-        }
-
-        public IActionResult OnPostCount(int postId)
+        public IActionResult OnGet(int postId)
         {
             Post = postData.GetPostById(postId);
-            Post.Like = postData.CountLike(Post);
+            return Page();
+        }
+
+        public IActionResult OnPost()
+        {
+           
+           //Post = postData.GetPostById(postId);
+            postData.Addcomments(Post);
             postData.commit();
             return RedirectToPage("./Comment", new { postId = Post.Id });
 

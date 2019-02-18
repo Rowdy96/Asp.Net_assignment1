@@ -7,6 +7,7 @@ namespace MessageBoard.Data
     public class InMemoryPostData : IPostData
     {
         List<Post> Posts;
+   
         public InMemoryPostData()
         {
             Posts = new List<Post>(){};

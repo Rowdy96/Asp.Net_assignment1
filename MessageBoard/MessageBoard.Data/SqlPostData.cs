@@ -16,8 +16,8 @@ namespace MessageBoard.Data
 
         public Post Addcomments(Post updatedPost)
         {
-           // var entity = db.Post.Attach(updatedPost);
-            //entity.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            var messages = db.Post.SingleOrDefault(r => r.Id == updatedPost.Id);
+           messages.c = messages.c + "," +updatedPost.c;
             return updatedPost;
         }
 
