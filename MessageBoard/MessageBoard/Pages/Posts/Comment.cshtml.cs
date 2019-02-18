@@ -12,13 +12,16 @@ namespace MessageBoard.Pages.Posts
 {
     public class CommentModel : PageModel
     {
-       
-       
-        [BindProperty]
-        public Post Post { get; set; }
 
-   
+
+
+        public Post Post { get; set; }
+        [BindProperty]
+        private string comment { get; set; }
+
         public IPostData postData { get; set; }
+        public string Comment { get => comment; set => comment = value; }
+
         public CommentModel(IPostData postData)
         {
             this.postData = postData;
@@ -30,13 +33,13 @@ namespace MessageBoard.Pages.Posts
             return Page();
         }
 
-        public IActionResult OnPost()
+        public IActionResult OnPost(int postId)
         {
-           
-           //Post = postData.GetPostById(postId);
+
+            Post = postData.GetPostById(postId);
             postData.Addcomments(Post);
             postData.commit();
-            return RedirectToPage("./Comment", new { postId = Post.Id });
+            return RedirectToPage("./Post");
 
         }
 

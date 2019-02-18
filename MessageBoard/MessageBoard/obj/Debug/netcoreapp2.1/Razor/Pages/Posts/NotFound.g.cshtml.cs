@@ -56,7 +56,7 @@ using MessageBoard;
             WriteLiteral("\r\n<h2>Not Found!!</h2>\r\n\r\n");
             EndContext();
             BeginContext(77, 58, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c17be3f53b0c488cb99d38f76f8c7e0c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9840534c2e9249b4b508ae0941d19c7f", async() => {
                 BeginContext(122, 9, true);
                 WriteLiteral("All posts");
                 EndContext();
